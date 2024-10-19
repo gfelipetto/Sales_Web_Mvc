@@ -5,7 +5,7 @@
 namespace SalesWebMvc.Migrations
 {
     /// <inheritdoc />
-    public partial class MigrationFixes : Migration
+    public partial class DepartmentForeignKey : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
