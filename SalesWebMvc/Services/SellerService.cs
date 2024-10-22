@@ -1,4 +1,5 @@
-﻿using SalesWebMvc.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SalesWebMvc.Data;
 using SalesWebMvc.Models;
 using System.Xml.Serialization;
 
@@ -18,7 +19,7 @@ namespace SalesWebMvc.Services
             return _context.Seller.ToList();
         }
         public Seller FindById(int id) {
-            return _context.Seller.FirstOrDefault(obj => obj.Id == id);
+            return _context.Seller.Include(obj => obj.Department).FirstOrDefault(obj => obj.Id == id);
         }
         public void Insert(Seller seller)
         {
